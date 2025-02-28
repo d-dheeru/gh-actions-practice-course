@@ -1,25 +1,26 @@
-name : My workFlow
-on : 
-  push:
-    workflow_dispatch:
+name: '01 - Building Blocks'
+
+# Triggers for the workflow
+on:
+  push:            # Triggered on push events
+  workflow_dispatch: # Triggered manually via GitHub UI
 
 jobs:
-   echo-hello:
-      -runs-on: ubuntu-latest
-      
-      steps:
-        name: Say hello
-        -run: echo "Hello World!"
+  echo-hello:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Say hello
+        run: echo "Hello, World!"
 
-   echo-goodbye:
-      -runs-on: ubuntu-latest
+  echo-goodbye:
+    runs-on: ubuntu-latest
 
-      steps:
-        name: failed-step
-        -run: | 
+    steps:
+      - name: Failed step
+        run: |
           echo "I will fail"
-          exit 1
+          exit 1  # Exit with a non-zero code to simulate failure
 
-        name: say-goodbye
-        -run: echo "Goodbye!"
+      - name: Say goodbye
+        run: echo "Goodbye!"
