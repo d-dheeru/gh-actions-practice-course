@@ -1,16 +1,25 @@
 name : My workFlow
-on : push
-
+on : 
+  push:
+    workflow_dispatch:
 
 jobs:
-   my-first-job:
+   echo-hello:
       -runs-on: ubuntu-latest
+      
       steps:
+        name: Say hello
         -run: echo "Hello World!"
-   my-second-job:
+
+
+   echo-goodbye:
       -runs-on: ubuntu-latest
+
       steps:
-        name: first-step
-        -run: echo "I will fail"
-        name: second-step
+        name: failed-step
+        -run: | 
+          echo "I will fail"
+          exit 1
+
+        name: say-goodbye
         -run: echo "Goodbye!"
