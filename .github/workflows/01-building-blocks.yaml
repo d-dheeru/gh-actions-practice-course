@@ -2,7 +2,7 @@ name: '01 - Building Blocks'
 
 # Triggers for the workflow
 on:
-  push:            # Triggered on push events
+  pull_request:            # Triggered on push events
   workflow_dispatch: # Triggered manually via GitHub UI
 
 jobs:
