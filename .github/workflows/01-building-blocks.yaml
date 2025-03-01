@@ -20,7 +20,7 @@ jobs:
       - name: Failed step
         run: |
           echo "I will fail"
-          exit 1  # Exit with a non-zero code to simulate failure
+          exit 0  # Exit with a non-zero code to simulate failure
 
       - name: Say goodbye
         run: echo "Goodbye!"
